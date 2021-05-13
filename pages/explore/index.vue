@@ -6,16 +6,24 @@
             <i id="explore-path" class="subtitle is-5"><i class="fal fa-folder"></i>D:/qninh/focusop/files/</i>
         </h4>
         <div class="is-full" id="files">
-            <file filename="lmao.fop"></file>
-            <file filename="lmao.fop"></file>
-            <file filename="lmao.fop"></file>
+            <file v-for="(fop, i) in fops" :key="i" :filename="fop"></file>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        layout: 'dashboard'
+        layout: 'dashboard',
+        head: {
+            title: 'FocusOP ― Explore'
+        },
+        data: () => ({
+            fops: []
+        }),
+
+        mounted() {
+            this.$socket.emit('get_fops', {}, fops => this.fops = fops)
+        }
     }
 </script>
 

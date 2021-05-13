@@ -7,7 +7,7 @@
             </div>
             <!-- MAIN -->
             <div class="column auto" id="main">
-                <head-bar></head-bar>
+                <header-bar></header-bar>
                 <Nuxt />
             </div>
         </div>
@@ -80,7 +80,7 @@
         transform: rotate(65deg);
         background: linear-gradient(60deg, #e156fd54, #8464db3d);
         z-index: -1;
-        animation-duration: 25s!important;
+        animation-duration: 45s!important;
     }
 
     .c2 {
@@ -89,9 +89,9 @@
         width: 8rem;
         height: 8rem;
         transform: rotate(65deg);
-        background: linear-gradient(60deg, #e156fd10, #8464db15);
+        background: linear-gradient(60deg, #e156fd08, #8464db08);
         z-index: -1;
-        animation-duration: 20s!important;
+        animation-duration: 40s!important;
     }
 
     #background {

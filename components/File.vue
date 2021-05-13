@@ -2,7 +2,7 @@
     <nuxt-link :to="'/explore/' + filename">
         <div class="fop-file" style="background:url(http://www.builderwebsitedesigns.com/wp-content/uploads/2017/06/1-1.jpg);background-size: cover;">
             <div class="info">
-                <h3>Lmao PII</h3>
+                <h3>{{filename}}</h3>
             </div>
         </div>
     </nuxt-link>

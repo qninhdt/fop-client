@@ -5,6 +5,9 @@
 <script>
 
 export default {
-    layout: 'dashboard'
+    layout: 'dashboard',
+    head: {
+        title: 'FocusOP ― Home'
+    }
 }
 </script>
