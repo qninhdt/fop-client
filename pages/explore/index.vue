@@ -12,7 +12,12 @@
 </template>
 
 <script>
+    import File from "../../components/File.vue"
+
     export default {
+        components: {
+            File
+        },
         layout: 'dashboard',
         head: {
             title: 'FocusOP ― Explore'

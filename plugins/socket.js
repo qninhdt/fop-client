@@ -4,3 +4,7 @@ import Vue from 'vue'
 const socket = SocketIOClient("localhost:5000")
 
 Vue.prototype.$socket = socket
+
+export {
+    socket
+}

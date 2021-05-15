@@ -24,7 +24,17 @@
     import 'normalize.css'
     import Particles from "particlesjs"
 
+    import HeaderBar from "../components/HeaderBar.vue"
+    import SideBar from "../components/SideBar.vue"
+    import StatusBar from "../components/StatusBar.vue"
+
     export default {
+
+        components: {
+            HeaderBar,
+            SideBar,
+            StatusBar
+        },
 
         async mounted() {
             Particles.init({

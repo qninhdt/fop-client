@@ -7,7 +7,7 @@
             <i class="fal fa-horizontal-rule"></i> Lối tắt
         </p>
         <ul class="menu-list">
-            <li><NuxtLink to="/home"><i class="fal fa-home"></i> Trang chính</NuxtLink></li>
+            <li><NuxtLink to="/"><i class="fal fa-home"></i> Trang chính</NuxtLink></li>
             <li>
             <a><i class="fal fa-history"></i>Gần đây <span class="tag is-light"><b>2</b></span></a>
             <ul>

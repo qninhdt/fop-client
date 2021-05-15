@@ -2,7 +2,6 @@ export default {
     router: {
         base: '/app'
     },
-    components: true,
     modules: [
         'nuxt-buefy',
     ],
@@ -11,7 +10,7 @@ export default {
         '~/assets/css/fontawesome.min.css'
     ],
     plugins: [
-        '~/plugins/socket.js'
+        '~/plugins/all.js'
     ],
     head: {
         meta: [
