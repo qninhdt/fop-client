@@ -5,16 +5,29 @@
 </template>
 
 <script>
+
+import party from 'party-js'
+
 export default {
     data() {
         return {
-            highlight: false
+            highlight: false,
+            last_pop: 0
         }
     },
     methods: {
         onHover() {
+            let now = (new Date()).getTime() / 1000
+
             if (['OPEN', 'FOUR'].includes(window.hand.label)) {
                 this.highlight = true
+
+                if (this.last_pop + 2 < now) {
+                    party.sparkles(this.$el)
+                    const sound = new Audio("public/pop.mp3")
+                    sound.play()
+                    this.last_pop = now
+                }
             }
         }
     }
@@ -23,21 +36,23 @@ export default {
 
 <style>
     .hoverable {
-        padding: .5rem;
-        background: #ecf0f1;
+        padding: .5rem 1rem;
+        background: #ecf0f19a;
         color: #2c3e50;
-        box-shadow: 3px 5px #f39c12;
-        transition-duration: .5s;
+        transition: .5s .5s;
         margin: 1rem;
+        border: 0.2rem solid rgba(220, 220, 220, 0.575);
+    }
+    .hoverable h2 {
+        font-size: 2rem!important;
     }
     .hoverable:hover {
-        background: #f39c12;
-        color: whitesmoke;
-        box-shadow: 2px 3px #f39c12;
-
+        transition-delay: 0s;
+        border-color: #bd2edda6;
     }
     .hoverable.highlight {
-        transform: scale(1.2);
-        box-shadow: 2rem 2rem 2rem 3rem #ccc;
+        transform: scale(1.3);
+        box-shadow: 4rem 4rem 6rem 8rem rgb(180, 180, 180);
+        background: #ecf0f1;
     }
 </style>

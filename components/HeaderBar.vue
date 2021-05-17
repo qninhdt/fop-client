@@ -2,7 +2,7 @@
     <nav class="navbar" id="header-bar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://github.com/qninhdt/focusop">
-        <img class="rotating" style="max-height: 5rem;" src="/logo.png" width="64" height="64">
+        <img class="rotating" style="max-height: 5rem;" src="/public/logo.png" width="64" height="64">
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

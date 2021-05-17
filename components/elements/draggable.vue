@@ -8,7 +8,7 @@
             @end="drag = false">
             <transition-group type="transition" :name="!drag ? 'flip-list' : null">
                 <div v-for="d in texts" :key="d.i" class="item">
-                    <p style="font-size: 2rem; margin: .1rem;">{{d.text}}</p>
+                    <span style="font-size: 2rem; margin: .1rem;">{{d.text}}</span>
                 </div>
             </transition-group>
         </draggable>
@@ -17,6 +17,7 @@
 
 <script>
 
+import partyjs from "party-js"
 import Draggable from "vuedraggable"
 
 export default {
@@ -56,7 +57,18 @@ export default {
         },
         isCorrect() {
             const _data = this.texts.map(d => d.text)
-            return JSON.stringify(_data) == JSON.stringify(this._correct);
+            const is_correct = JSON.stringify(_data) == JSON.stringify(this._correct)
+
+            if (is_correct) {
+                partyjs.confetti(this.$el, {
+                    count: partyjs.variation.range(10, 200),
+                    size: partyjs.variation.range(0.6, 2.6),
+                })
+                const sound = new Audio("public/correct.mp3")
+                sound.play()
+            }
+
+            return is_correct
         }
     }
 }
@@ -80,7 +92,7 @@ export default {
     .horizontal .item {
         display: inline-block;
         padding: .5rem 1.5rem;
-        margin: .2rem;
+        margin: .3rem .5rem;
         border-radius: 1rem;
         background: rgba(128, 128, 128, 0.3);
     }
