@@ -3,6 +3,7 @@
         <draggable 
             v-model="texts" 
             draggable=".item"
+            direction="horizontal"
             v-bind="dragOptions"
             @start="drag = true"
             @end="drag = false">
@@ -52,7 +53,8 @@ export default {
                 animation: 200,
                 group: "description",
                 disabled: false,
-                ghostClass: "ghost"
+                ghostClass: "ghost",
+                direction: 'horizontal',
             }
         },
         isCorrect() {
@@ -64,7 +66,7 @@ export default {
                     count: partyjs.variation.range(10, 200),
                     size: partyjs.variation.range(0.6, 2.6),
                 })
-                const sound = new Audio("public/correct.mp3")
+                const sound = new Audio("/app/public/correct.mp3")
                 sound.play()
             }
 
@@ -92,7 +94,7 @@ export default {
     .horizontal .item {
         display: inline-block;
         padding: .5rem 1.5rem;
-        margin: .3rem .5rem;
+        margin: .5rem .6rem;
         border-radius: 1rem;
         background: rgba(128, 128, 128, 0.3);
     }

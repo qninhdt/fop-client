@@ -2,7 +2,7 @@
     <div style="height: 100vh; width: 100vw">
         <span id="cursor" :style="{ borderColor: cursorColor[0], backgroundColor: cursorColor[1]}"></span>
 
-        <img id="logo" width="40px" height="40px" class="rotating" src="/public/logo.png"/>
+        <img id="logo" width="40px" height="40px" class="rotating" src="/app/public/logo.png"/>
         <div class="reveal" v-html="text"></div>
         <canvas id="background"></canvas>
         <div class="square" id="square-1"></div>
@@ -68,7 +68,7 @@
                     selector: '#background',
                     connectParticles: true,
                     color: ['#e056fd', '#ff9ff3'],
-                    minDistance: 100,
+                    minDistance: 75,
                     maxParticles: 75,
                 });
             })
@@ -101,29 +101,26 @@
         },
         computed: {
             cursorColor() {
-                if (this.hand_type == 'ROCK') {
-                    return ['#3498db', '#2980b9']
-                }
-
                 if (this.hand_type == 'CONTROL') {
-                    return ['#f39c12', '#e67e22']
+                    return ['#f39c12', '#f39c12']
                 }
-
-                return ['#3498db', 'transparent']
+                return ['#e74c3c', '#e74c3c']
             }
         }
     }
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@400&display=swap');
+    html {
+    }
     .reveal {
+        color: #22a6b3;
         height: 100vh!important;
         background: transparent!important;
-        /* cursor: none; */
+        cursor: none;
         font-size: 2rem!important;
-        font-family: 'Playfair Display', serif;
+        font-family: 'KoHo', sans-serif;
     }
     .reveal-viewport {
         background: transparent!important;
@@ -138,7 +135,7 @@
         width: 10px;
         border: 3px solid;
         border-radius: 100%;
-        transition-duration: .1s;
+        /* transition-duration: .1s; */
     }
     #background {
         position: absolute;

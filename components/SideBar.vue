@@ -11,8 +11,8 @@
             <li>
             <a><i class="fal fa-history"></i>Gần đây <span class="tag is-light"><b>2</b></span></a>
             <ul>
-                <li><a><i class="fal fa-file-powerpoint"></i>Bài giảng.fop</a></li>
-                <li><a><i class="fal fa-file-powerpoint"></i>lmao.fop</a></li>
+                <li><a><i class="fal fa-file-powerpoint"></i>Thuyết trình phần mềm.fop</a></li>
+                <li><a><i class="fal fa-file-powerpoint"></i>Test.fop</a></li>
             </ul>
             </li>
             <li><NuxtLink to="/explore"><i class="fal fa-folders"></i>Quản lí file</NuxtLink></li>

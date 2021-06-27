@@ -18,7 +18,7 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: 'Meta description' }
         ],
-        link: [{ rel: 'icon', type: 'image/png', href: '/public/favicon.ico' }]
+        link: [{ rel: 'icon', type: 'image/png', href: '/app/public/favicon.ico' }]
     },
     ssr: false
 }
