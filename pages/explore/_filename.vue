@@ -7,6 +7,7 @@
         <canvas id="background"></canvas>
         <div class="square" id="square-1"></div>
         <div class="square" id="square-2"></div>
+        <drawing :on="drawing_mode"></drawing>
     </div>
 </template>
 
@@ -24,6 +25,7 @@
     import Particles from "particlesjs"
 
     import File from "../../components/File.vue"
+    import Drawing from "../../components/Drawing.vue"
 
     // hljs.registerLanguage('cpp', cpp);
     // hljs.registerLanguage('pas', pascal);
@@ -33,7 +35,8 @@
     export default {
 
         components: {
-            File
+            File,
+            Drawing
         },
 
         head: data => ({
@@ -42,7 +45,8 @@
         data: () => ({
             text: "",
             hand_type: "",
-            cursor: [0, 0]
+            cursor: [0, 0],
+            drawing_mode: false,
         }),
         async asyncData({ params }) {
             const filename = params.filename 
@@ -68,8 +72,8 @@
                     selector: '#background',
                     connectParticles: true,
                     color: ['#e056fd', '#ff9ff3'],
-                    minDistance: 75,
-                    maxParticles: 75,
+                    minDistance: 50,
+                    maxParticles: 100,
                 });
             })
 
@@ -83,7 +87,6 @@
                 if (hand_dir == 'right') {
                     deck.right()
                 }
-
             })
 
             const cursor = document.getElementById('cursor')
@@ -94,7 +97,11 @@
 
             this.$socket.on('new_hand_type', hand => {
                 window.hand = hand
-                this.hand_type = hand.label
+                this.hand_type = hand.label;
+
+                if (this.hand_type == "OK") {
+                    this.drawing_mode = !this.drawing_mode
+                }
             })
 
             
@@ -129,7 +136,7 @@
         background-color: transparent!important;
     }
     #cursor {
-        z-index: 999;
+        z-index: 1000;
         position: absolute;
         height: 10px;
         width: 10px;
