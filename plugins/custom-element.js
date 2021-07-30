@@ -7,6 +7,7 @@ import Scrollable from  '../components/elements/scrollable.vue'
 import Text from  '../components/elements/text.vue'
 import Dropzone from '../components/elements/dropzone.vue'
 import DragItem from '../components/elements/dragitem.vue'
+import Quiz from "../components/elements/quiz.vue"
 
 Vue.use(VueCustomElenemt)
 
@@ -16,3 +17,4 @@ Vue.customElement('v-scrollable', Scrollable)
 Vue.customElement('v-text', Text)
 Vue.customElement('v-dropzone', Dropzone)
 Vue.customElement('v-dragitem', DragItem)
+Vue.customElement('v-quiz',Quiz)

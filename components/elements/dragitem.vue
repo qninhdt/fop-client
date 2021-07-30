@@ -34,6 +34,7 @@ export default {
         padding: 1rem;
         width: fit-content;
         display: inline-block;
+        color: rgb(112, 112, 0);
     }
     .drag-item.wrong {
         background-color: #eb4e4b;

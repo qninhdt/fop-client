@@ -4,10 +4,6 @@
 
         <img id="logo" width="40px" height="40px" class="rotating" src="/app/public/logo.png"/>
         <div class="reveal" v-html="text"></div>
-        <canvas id="background"></canvas>
-        <div class="square" id="square-1"></div>
-        <div class="square" id="square-2"></div>
-        <drawing :on="drawing_mode"></drawing>
     </div>
 </template>
 
@@ -22,10 +18,8 @@
     import cpp from 'highlight.js/lib/languages/cpp';
     import pascal from 'highlight.js/lib/languages/ruby'
     import "highlight.js/styles/github.css"
-    import Particles from "particlesjs"
 
     import File from "../../components/File.vue"
-    import Drawing from "../../components/Drawing.vue"
 
     // hljs.registerLanguage('cpp', cpp);
     // hljs.registerLanguage('pas', pascal);
@@ -36,7 +30,6 @@
 
         components: {
             File,
-            Drawing
         },
 
         head: data => ({
@@ -67,14 +60,6 @@
 
                 await this.$nextTick()
                 await deck.initialize();
-
-                Particles.init({
-                    selector: '#background',
-                    connectParticles: true,
-                    color: ['#e056fd', '#ff9ff3'],
-                    minDistance: 50,
-                    maxParticles: 100,
-                });
             })
 
             window.hand = {}
@@ -130,10 +115,10 @@
         font-family: 'KoHo', sans-serif;
     }
     .reveal-viewport {
-        background: transparent!important;
+        background: #222f3e!important;
     }
     .reveal .slide-background {
-        background-color: transparent!important;
+        background-color: #222f3e!important;
     }
     #cursor {
         z-index: 1000;
@@ -225,6 +210,13 @@
     #square-2 {
         left: 1vw;
         bottom: 1vw;
+    }
+    img {
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
     }
    
 </style>

@@ -78,15 +78,15 @@ export default {
 
 <style>
     .drag {
-        background: rgba(128, 128, 128, 0.2);
+        background: rgba(128, 128, 128, 0.5);
         border-radius: 2rem;
         overflow-y: hidden;
     }
     .drag.correct {
-        background: rgba(0, 128, 0, 0.2);
+        background: rgba(0, 128, 0, 0.8);
     }
     .drag.correct .item {
-        color: rgba(0, 128, 0);
+        color: white;
     }
     .item:hover{
         background: rgba(220, 220, 220, 0.603);

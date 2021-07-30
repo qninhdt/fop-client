@@ -8,7 +8,11 @@
         border-radius: 2rem;
         font-family: 'Recursive', sans-serif;
         overflow-x: hidden;
-        
+        padding: 1rem;
+    }
+
+    .text pre {
+        color: white;
     }
 
     .text pre{

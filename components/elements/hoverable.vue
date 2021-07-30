@@ -37,7 +37,7 @@ export default {
 <style>
     .hoverable {
         padding: .5rem 1rem;
-        background: #ecf0f19a;
+        background: #ecf0f1;
         color: #2c3e50;
         transition: .5s .5s;
         margin: 1rem;
@@ -52,7 +52,7 @@ export default {
     }
     .hoverable.highlight {
         transform: scale(1.3);
-        box-shadow: 4rem 4rem 6rem 8rem rgb(180, 180, 180);
+        box-shadow: 4rem 4rem 6rem 8rem #2c3e50;
         background: #ecf0f1;
     }
 </style>
